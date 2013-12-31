@@ -1,9 +1,11 @@
-#FaLaLaLaBot 
-**A Twitter Bot by Daniel Plemmons**
+#Year of the Linux Desktop Bot
+**A Twitter Bot originally written by Daniel Plemmons**
+
+**Then I screwed it up**
 
 **NOTE:** This was written on Christmas-Eve in a rush. Probably not the best code ever.
 
-FaLaLaLaBot is a very simple twitter bot that finds tweets once per hour where the poster has said "Tis the season to be..."  and reposts it with a FaLaLaLaLa. It trys to avoid things it has said before (though it isn't great at it.)
+Year of the Linux Desktop Bot is a very simple twitter bot that finds tweets once per hour where the poster has said "Year of the Linux Desktop"  and reposts it. It tries to avoid things it has said before (though it isn't great at it.)
 
 **Additional Requirements:**
 - python-twitter: https://github.com/bear/python-twitter.
