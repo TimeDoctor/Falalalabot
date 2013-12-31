@@ -6,10 +6,10 @@ import re
 import random
 import logging
 
-class FaLaLaLaBot:
+class YOLDB:
 
 	def __init__(self):
-		print 'Starting FaLaLaLaBot'
+		print 'Starting Year of the Linux Desktop Bot'
 
 		self.nextPushTime = 0
 		self.pushInterval = 60 * 60
@@ -17,7 +17,7 @@ class FaLaLaLaBot:
 		self.result_type = 'recent'
 		self.usedStrings = list()
 
-		logging.basicConfig(filename='falalalalog.log',level=logging.INFO)
+		logging.basicConfig(filename='yearofthelinuxdesktopbot.log',level=logging.INFO)
 
 		try:
 			self.api = twitter.Api(consumer_key=configs.consumer_key, consumer_secret=configs.consumer_secret, access_token_key=configs.access_token_key, access_token_secret=configs.access_token_secret)
@@ -63,7 +63,7 @@ class FaLaLaLaBot:
 			resultText.append(r)
 
 		for t in resultText:
-			reged = re.search('(Tis the season to be )([a-zA-Z][a-zA-Z -]+[a-zA-Z])', t.text)
+			reged = re.search('(Year of the Linux desktop )([a-zA-Z][a-zA-Z -]+[a-zA-Z])', t.text)
 
 			if(reged != None and re.search(noGo, str(reged.group(2))) == None):
 				userList.append(t.user)
@@ -74,7 +74,7 @@ class FaLaLaLaBot:
 				randIndex = random.randint(0,len(regexedList)-1)
 				toBeString = regexedList[randIndex]
 				user = userList[randIndex]
-				post = str("'Tis the season to be " + toBeString + ". Falalalala. Lalalala. via @" + user.screen_name)
+				post = str("' " + toBeString + ". YOLD via @" + user.screen_name)
 
 				if(len(post) <= 140):
 					#print post
@@ -102,4 +102,4 @@ class FaLaLaLaBot:
 			self.nextPushTime = time.time() + self.failureInterval
 
 if __name__ == '__main__':
-	bot = FaLaLaLaBot()
+	bot = YOLDB()
