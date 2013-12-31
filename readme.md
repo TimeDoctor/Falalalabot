@@ -10,7 +10,9 @@ Year of the Linux Desktop Bot is a very simple twitter bot that finds tweets onc
 See it in service here: https://twitter.com/YearOfLinuxDesk
 
 **Additional Requirements:**
-- python-twitter: https://github.com/bear/python-twitter.
+- python-twitter: https://github.com/bear/python-twitter. or just:
+
+    pip install -r requirements.txt
 - A twitter account with an active application attached.
 - a config.py with your login credentials.
 
