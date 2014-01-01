@@ -63,7 +63,7 @@ class YOLDB:
 			resultText.append(r)
 
 		for t in resultText:
-			logging.info(str(t.text + "\n"))
+			logging.info(str(t.text + '\n'))
 			reged = re.search('year ([a-zA-Z ]+)? Linux ([a-zA-Z ]+)? Desktop', t.text, re.I)
 
 			if(reged != None and re.search(noGo, str(reged.group(2))) == None):
