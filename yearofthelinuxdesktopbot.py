@@ -63,7 +63,8 @@ class YOLDB:
 			resultText.append(r)
 
 		for t in resultText:
-			reged = re.search('(Year of the Linux desktop )([a-zA-Z][a-zA-Z -]+[a-zA-Z])', t.text)
+            logging.info(t.text + "\n")
+			reged = re.search('(Year of the Linux desktop)([a-zA-Z][a-zA-Z -]+[a-zA-Z])', t.text)
 
 			if(reged != None and re.search(noGo, str(reged.group(2))) == None):
 				userList.append(t.user)
