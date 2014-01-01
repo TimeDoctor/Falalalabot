@@ -63,7 +63,7 @@ class YOLDB:
 			resultText.append(r)
 
 		for t in resultText:
-            logging.info(str(t.text + "\n"))
+			logging.info(str(t.text + "\n"))
 			reged = re.search('(Year of the Linux desktop)([a-zA-Z][a-zA-Z -]+[a-zA-Z])', t.text)
 
 			if(reged != None and re.search(noGo, str(reged.group(2))) == None):
