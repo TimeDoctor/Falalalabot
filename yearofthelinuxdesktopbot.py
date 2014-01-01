@@ -39,13 +39,13 @@ class YOLDB:
 
 	def makePost(self):
 		
-		noGo = 'jolly|fa |la |tra '
+		noGo = ''
 
 		for used in self.usedStrings:
 			noGo += '|' + str(used)
 
 		try:
-			results = self.api.GetSearch(term='tis the season to', result_type=self.result_type)
+			results = self.api.GetSearch(term='Year of the Linux Desktop', result_type=self.result_type)
 		except twitter.TwitterError as e:
 			logging.error("TwitterError in search: " + str(e.message[0]))
 			self.nextPushTime = time.time() + self.failureInterval
