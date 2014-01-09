@@ -63,19 +63,20 @@ class YOLDB:
 			resultText.append(r)
 
 		for t in resultText:
-			logging.info(str(t.text + '\n'))
-			reged = re.search('year ([a-zA-Z ]+)? Linux ([a-zA-Z ]+)? Desktop', t.text, re.I)
+			text = t.text.encode('ascii', 'ignore')
+			reged = re.search('year([a-zA-Z ]+)Linux([a-zA-Z ]+)Desktop', text, re.I)
 
-			if(reged != None and re.search(noGo, str(reged.group(2))) == None):
+			if(reged != None and not str(text) in self.usedStrings):
 				userList.append(t.user)
-				regexedList.append(str(reged.group(2)))
+				regexedList.append(str(text))
+				logging.info(str(text + '\n'))
 		
 		while(True):
 			if(len(regexedList) > 0):
 				randIndex = random.randint(0,len(regexedList)-1)
 				toBeString = regexedList[randIndex]
 				user = userList[randIndex]
-				post = str("' " + toBeString + ". YOLD via @" + user.screen_name)
+				post = str(toBeString + " via @" + user.screen_name)
 
 				if(len(post) <= 140):
 					#print post
